@@ -1,0 +1,4 @@
+packages:
+  - packages/* # packages 存放组件包代码
+  - play # 存放组件测试的代码
+  - docs # 存放组件文档
