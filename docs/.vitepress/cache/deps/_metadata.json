@@ -1,0 +1,76 @@
+{
+  "hash": "3e27236b",
+  "configHash": "8539b7a3",
+  "lockfileHash": "cf1db27a",
+  "browserHash": "9783b2f6",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.4.36_typescript@5.5.3/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "d830261f",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.3.7/node_modules/@vue/devtools-api/dist/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "b1027d43",
+      "needsInterop": false
+    },
+    "vitepress > @vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@10.11.0_vue@3.4.36_typescript@5.5.3_/node_modules/@vueuse/core/index.mjs",
+      "file": "vitepress___@vueuse_core.js",
+      "fileHash": "f53a4957",
+      "needsInterop": false
+    },
+    "@janus-c/icons-vue": {
+      "src": "../../../../node_modules/.pnpm/@janus-c+icons-vue@1.0.2/node_modules/@janus-c/icons-vue/dist/index.js",
+      "file": "@janus-c_icons-vue.js",
+      "fileHash": "e40699f3",
+      "needsInterop": false
+    },
+    "@vue/shared": {
+      "src": "../../../../node_modules/.pnpm/@vue+shared@3.4.31/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+      "file": "@vue_shared.js",
+      "fileHash": "71258689",
+      "needsInterop": false
+    },
+    "lodash-unified": {
+      "src": "../../../../node_modules/.pnpm/lodash-unified@1.0.3_@types+lodash-es@4.17.12_lodash-es@4.17.21_lodash@4.17.21/node_modules/lodash-unified/import.js",
+      "file": "lodash-unified.js",
+      "fileHash": "cfc0d113",
+      "needsInterop": false
+    },
+    "@janus-c/icons-vue/dist/index": {
+      "src": "../../../../node_modules/.pnpm/@janus-c+icons-vue@1.0.2/node_modules/@janus-c/icons-vue/dist/index.js",
+      "file": "@janus-c_icons-vue_dist_index.js",
+      "fileHash": "1bdbd562",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "36654890",
+      "needsInterop": false
+    },
+    "janus-ui": {
+      "src": "../../../../node_modules/.pnpm/janus-ui@0.0.2/node_modules/janus-ui/es/packages/components/index.mjs",
+      "file": "janus-ui.js",
+      "fileHash": "347130a5",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-L5XGG2S7": {
+      "file": "chunk-L5XGG2S7.js"
+    },
+    "chunk-CS73BQ2K": {
+      "file": "chunk-CS73BQ2K.js"
+    },
+    "chunk-PCT7LBY2": {
+      "file": "chunk-PCT7LBY2.js"
+    },
+    "chunk-PZ5AY32C": {
+      "file": "chunk-PZ5AY32C.js"
+    }
+  }
+}

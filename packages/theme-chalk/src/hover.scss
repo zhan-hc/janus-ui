@@ -1,0 +1,117 @@
+@use 'common/var' as *;
+@use 'mixins/var' as *;
+@use 'mixins/mixins' as *;
+
+@include b(hover) {
+  cursor: pointer;
+  @include m(text-link) {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-bottom: 2px solid getCssVar('color-primary-hover');
+      box-sizing: border-box;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+        transition: width .3s ease-out !important;
+      }
+    }
+  }
+  @include m(border-around) {
+    position: relative;
+    padding: 3px 6px;
+    border: none;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      border: 2px solid transparent;
+      width: 0;
+      height: 0;
+      box-sizing: border-box;
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        width: 100%;
+        height: 100%;
+      }
+      &::before {
+        border-top-color: getCssVar('color-primary-hover');
+        border-right-color: getCssVar('color-primary-hover');
+        transition: width 0.3s ease-out, height 0.3s ease-out 0.3s !important;
+      }
+      &::after {
+        border-bottom-color: getCssVar('color-primary-hover');
+        border-left-color: getCssVar('color-primary-hover');
+        transition: border-color 0s ease-out 0.6s, width 0.3s ease-out 0.6s, height 0.3s ease-out 1s !important;
+      }
+    }
+  }
+  @include m(contrast-progress) {
+    position: relative;
+    color: getCssVar('text-color-primary');
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 0;
+      background: inherit;
+      mix-blend-mode: difference;
+      transition: all 1s ease-in-out !important;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  @include m(frame-content) {
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+      transition: all .6s ease !important;
+    }
+    &::before {
+      bottom: 0;
+      left: 0;
+      transform: translate(100%, -50%);
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+    &::after {
+      right: 0;
+      top: 0;
+      transform: translate(-100%, 50%);
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+  }
+}

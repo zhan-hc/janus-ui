@@ -1,0 +1,6 @@
+{
+  "name": "@janus-ui/constants",
+  "private": true,
+  "main": "index.ts",
+  "license": "MIT"
+}

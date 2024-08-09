@@ -1,0 +1,11 @@
+@use './var' as *;
+@use '../mixins/_var.scss' as *;
+
+
+html.dark {
+  @include set-css-theme-color($theme-color, 'dark');
+  @include set-css-color-type('primary');
+  @include set-component-css-var('bg-color', $bg-color);
+  @include set-component-css-var('border-color', $border-color);
+  @include set-component-css-var('text-color', $text-color);
+}

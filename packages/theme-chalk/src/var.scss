@@ -1,0 +1,15 @@
+// CSS3 var
+@use 'common/var' as *;
+@use 'mixins/var' as *;
+
+:root {
+  @include set-css-theme-color($theme-color);
+  @include set-css-color-type('primary');
+  @include set-component-css-var('bg-color', $bg-color);
+  @include set-component-css-var('border-color', $border-color);
+  @include set-component-css-var('border-radius', $border-radius);
+  @include set-component-css-var('box-shadow', $box-shadow);
+  
+  @include set-component-css-var('text-color', $text-color);
+  @include set-component-css-var('transition-duration', $transition-duration);
+}

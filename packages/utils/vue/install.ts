@@ -1,4 +1,5 @@
 import type { SFCWithInstall } from './typescript'
+import { NOOP } from '@vue/shared'
 export const withInstall = <T, E extends Record<string, any>>(
   main: T,
   extra?: E
@@ -15,4 +16,10 @@ export const withInstall = <T, E extends Record<string, any>>(
     }
   }
   return main as SFCWithInstall<T> & E
+}
+
+export const withNoopInstall = <T>(component: T) => {
+  ;(component as SFCWithInstall<T>).install = NOOP
+
+  return component as SFCWithInstall<T>
 }

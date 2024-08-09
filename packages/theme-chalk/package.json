@@ -1,12 +1,27 @@
 {
   "name": "@janus-ui/theme-chalk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "index.css",
+  "keywords": [
+    "vue-components",
+    "janus-ui",
+    "theme-chalk",
+    "janus-ui"
+  ],
+  "homepage": "https://github.com/zhan-hc/janus-ui/packages/theme-chalk/README.md",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp --tasks"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhan-hc/janus-ui.git"
+  },
+  "style": "index.css",
+  "author": "zhan-hc",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0"
+  }
 }

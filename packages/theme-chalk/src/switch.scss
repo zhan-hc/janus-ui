@@ -1,0 +1,102 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+
+$switch-width: () !default;
+$switch-width: map.merge(
+  (
+    'large': 50px,
+    'default': 40px,
+    'small': 30px,
+  ),
+  $switch-width
+);
+
+$switch-height: () !default;
+$switch-height: map.merge(
+  (
+    'large': 24px,
+    'default': 20px,
+    'small': 16px,
+  ),
+  $switch-height
+);
+
+$switch-border-radius: () !default;
+$switch-border-radius: map.merge(
+  (
+    'large': 12px,
+    'default': 10px,
+    'small': 8px,
+  ),
+  $switch-border-radius
+);
+
+$switch-button-size: () !default;
+$switch-button-size: map.merge(
+  (
+    'large': 20px,
+    'default': 16px,
+    'small': 12px,
+  ),
+  $switch-button-size
+);
+
+@include b(switch) {
+  @include set-component-css-var('switch', $switch);
+  position: relative;
+  display: inline-block;
+  background-color: getCssVar('switch-off-color');
+  min-width: map.get($switch-width, 'default');
+  height: map.get($switch-height, 'default');
+  line-height: map.get($switch-height, 'default');
+  border-radius: map.get($switch-border-radius, 'default');
+  transition: background-color 0.3s !important;
+  cursor: pointer;
+  @include e(handle) {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: map.get($switch-button-size, 'default');
+    height: map.get($switch-button-size, 'default');
+    transition: all 0.3s !important;
+    &::before {
+      position: absolute;
+      inset: 0;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px #00230b33;
+      transition: all .2s ease-in-out !important;
+      content: "";
+    }
+  }
+  @include when(checked) {
+    background-color: getCssVar('switch-on-color');
+    @include e(handle) {
+      left: calc(100% - map.get($switch-button-size, 'default') - 2px);
+    }
+  }
+  @include when(disabled) {
+    opacity: 0.6;
+  }
+  @each $size in (large, small) {
+    @include m($size) {
+      min-width: map.get($switch-width, $size);
+      height: map.get($switch-height, $size);
+      line-height: map.get($switch-height, $size);
+      border-radius: map.get($switch-border-radius, $size);
+      @include e(handle) {
+        width: map.get($switch-button-size, $size);
+        height: map.get($switch-button-size, $size);
+      }
+      @include when(checked) {
+        @include e(handle) {
+          left: calc(100% - map.get($switch-button-size, $size) - 2px);
+        }
+      }
+    }
+  }
+}

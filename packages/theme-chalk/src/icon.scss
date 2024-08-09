@@ -1,0 +1,28 @@
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@include b(icon) {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  @include when(loading) {
+    animation: rotating 2s linear infinite !important;
+  }
+  svg {
+    height: 1em;
+    width: 1em;
+  }
+}

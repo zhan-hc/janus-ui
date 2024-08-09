@@ -1,0 +1,59 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+@include b(anchor) {
+  @include set-component-css-var('anchor', $anchor);
+  position: relative;
+  background-color: getCssVar('anchor-bg-color');
+  @include e(marker) {
+    position: absolute;
+    background-color: getCssVar('anchor-marker-bg-color');
+    border-radius: 4px;
+    opacity: 0;
+    z-index: 0;
+  }
+  &.#{$namespace}-anchor--vertical {
+    position: relative;
+    @include e(marker) {
+      width: 4px;
+      height: 14px;
+      top: 8px;
+      left: 0;
+      transition: top 0.25s ease-in-out, opacity 0.25s !important;
+    }
+    @include e(list) {
+      padding-left: getCssVar('anchor-padding-indent');
+    }
+    @include e(item) {
+      display: flex;
+      overflow: hidden;
+    }
+    @include e(link) {
+      padding: 4px 0;
+    }
+  }
+  &.#{$namespace}-anchor--horizontal {
+    position: relative;
+    @include e(marker) {
+      height: 2px;
+      width: 20px;
+      bottom: 0;
+      transition: left 0.25s ease-in-out, opacity 0.25s, width 0.25s !important;
+    }
+
+    @include e(list) {
+      display: flex;
+      padding-bottom: 4px;
+
+      @include e(item) {
+        padding-left: 16px;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

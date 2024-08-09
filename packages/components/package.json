@@ -1,15 +1,13 @@
 {
   "name": "@janus-ui/components",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@janus-ui/utils": "workspace:^"
-  }
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {}
 }

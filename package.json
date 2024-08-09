@@ -1,12 +1,30 @@
 {
-  "name": "com",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "play",
+    "docs"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@janus-c/icons-vue": "^1.0.2",
+    "@janus-ui/components": "workspace:^",
+    "@janus-ui/constants": "workspace:^",
+    "@janus-ui/hooks": "workspace:^",
+    "@janus-ui/theme-chalk": "workspace:^",
+    "@janus-ui/utils": "workspace:^",
+    "@vueuse/core": "^10.11.0",
+    "lodash-unified": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "sass": "^1.77.8",
+    "vite": "^5.3.1"
+  }
 }
