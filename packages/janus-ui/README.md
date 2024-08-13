@@ -12,7 +12,7 @@ pnpm i janus-ui
 ## Usage
 ```javascript
 import Janus from 'janus-ui'
-import 'janus-ui/es/style.css'
+import 'janus-ui/theme-chalk/index.css'
 
 const app = createApp(App)
 app.use(JaunsUi)

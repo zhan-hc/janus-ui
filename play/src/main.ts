@@ -4,8 +4,8 @@ import { createApp } from 'vue'
 // import '@janus-ui/theme-chalk/dist/reset.css'
 // import '@janus-ui/theme-chalk/dist/dark/css-vars.css'
 import App from './App.vue'
-import JaunsUi from 'janus-ui'
+// import JaunsUi from 'janus-ui'
 // import 'janus-ui/es/style.css'
-// import JaunsUi from '../../packages/janus-ui/es/packages/components/index.mjs'
+// import JaunsUi from '../../packages/janus-ui'
 // createApp(App).use(JaunsUi).mount('#app')
 createApp(App).mount('#app')

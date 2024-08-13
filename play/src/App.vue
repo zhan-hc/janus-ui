@@ -4,7 +4,7 @@ import ColorPanel from './components/color-panel.vue'
 import { useDark, useToggle } from '@vueuse/core' 
 import { Date, Arrow, Loading, Sun, Moon } from '@janus-c/icons-vue'
 import * as Icons from '@janus-c/icons-vue/dist/index'
-import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch } from '../../packages/janus-ui/es/packages/components/index.mjs'
+import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch } from '../../packages/janus-ui'
 const switchStatus = ref(false)
 const themeStatus = ref(false)
 const isDark = useDark()

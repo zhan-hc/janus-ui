@@ -1,20 +1,23 @@
 {
   "name": "janus-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Component Library for Vue 3",
   "keywords": [
     "janus-ui",
     "ui",
     "vue"
   ],
-  "main": "es/packages/components/index.mjs",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhan-hc/janus-ui.git"
   },
   "files": [
     "es",
-    "lib"
+    "lib",
+    "theme-chalk"
   ],
   "author": "zhan-hc",
   "license": "MIT",

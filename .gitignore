@@ -14,8 +14,7 @@ lib
 # Bundle
 dist
 coverage
-packages/element-plus/version.ts
-
+packages/janus-ui/theme-chalk
 # local env files
 *.local
 .eslintcache

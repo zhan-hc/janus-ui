@@ -23,7 +23,7 @@ pnpm install element-plus
 // main.ts
 import { createApp } from 'vue'
 import  JanusUi from 'janus-ui'
-import 'janus-ui/es/style.css'
+import 'janus-ui/theme-chalk/index.css'
 import App from './App.vue'
 
 const app = createApp(App)
