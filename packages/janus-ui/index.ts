@@ -1,6 +1,5 @@
 import { INSTALLED_KEY } from '@janus-ui/constants'
 import * as components from '@janus-ui/components';
-import '@janus-ui/theme-chalk/src/index.scss'
 
 export * from '@janus-ui/components'
 

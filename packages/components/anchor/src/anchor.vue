@@ -59,6 +59,7 @@ const anchorClasses = computed(() => {
 const markerStyle = computed(() => {
   if (!markerRef.value || !currentAnchor.value) return {}
   const linksRef = links[currentAnchor.value]
+  if (!linksRef) return {}
   const anchorRect = anchorRef.value.getBoundingClientRect()
   // const markerRect = markerRef.value.getBoundingClientRect()
   const linkRect = linksRef.getBoundingClientRect()
