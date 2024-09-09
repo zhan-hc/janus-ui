@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "JANUS UI",
   description: "一个轻量级UI框架",
+  head: [['link', { rel: 'icon', href: '/logo-link.svg' }]],
   themeConfig: {
     logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config

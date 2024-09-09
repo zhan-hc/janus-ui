@@ -45,3 +45,23 @@ app.mount('#app')
   
 </script>
 ```
+
+## nuxt 使用
+
+```shell
+# NPM
+npm install janus-ui-nuxt --save
+
+# Yarn
+yarn add janus-ui-nuxt
+
+# pnpm
+pnpm install janus-ui-nuxt
+```
+
+在nuxt.config.js文件中配置，janus-ui-nuxt会默认全局引入组件和样式
+
+```js
+modules: ['janus-ui-nuxt']
+```
+

@@ -48,9 +48,6 @@ importers:
       vite:
         specifier: ^5.3.1
         version: 5.4.1(@types/node@22.3.0)(sass@1.77.8)
-      vite-plugin-sass:
-        specifier: ^0.1.0
-        version: 0.1.0
 
   docs:
     dependencies:

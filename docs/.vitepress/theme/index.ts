@@ -3,8 +3,8 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-import '@janus-ui/theme-chalk/dist/index.css'
-import '@janus-ui/theme-chalk/dist/dark/css-vars.css'
+import '@janus-ui/theme-chalk/src/index.scss'
+import '@janus-ui/theme-chalk/src/dark/css-vars.scss'
 
 export default {
   extends: DefaultTheme,
