@@ -4,13 +4,13 @@
 # 选择一个你喜欢的包管理器
 
 # NPM
-npm install element-plus --save
+npm install janus-ui --save
 
 # Yarn
-yarn add element-plus
+yarn add janus-ui
 
 # pnpm
-pnpm install element-plus
+pnpm install janus-ui
 ```
 
 ## 使用
