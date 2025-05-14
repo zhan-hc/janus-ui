@@ -1,0 +1,37 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+@include b(tree) {
+  .#{$namespace}-tree-node__children {
+    margin-left: 20px;
+  }
+  .is-expanded > .#{$namespace}-tree-node__children {
+    display: block;
+  }
+}
+
+@include b(tree-node){
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  @include e(content) {
+    display: flex;
+    align-items: center;
+  }
+  @include e(icon) {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+    &.expanded {
+      transform: rotate(90deg);
+    }
+    @include when(leaf) {
+      opacity: 0;
+    }
+  }
+  .#{$namespace}-icon {
+    margin-right: 6px;
+  }
+}

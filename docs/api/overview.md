@@ -1,14 +1,46 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { JaIcon, JaCard, JaSwitch, JaAnchor, JaAnchorLink } from '@janus-ui/components'
+  import { JaIcon, JaCard, JaSwitch, JaAnchor, JaAnchorLink, JaTree } from '@janus-ui/components'
   import { Comment, Date, Home } from '@janus-c/icons-vue'
 
   const switchStatus = ref(true)
+  const treeData = [
+    {
+      label: 'Level one 1',
+      children: [
+        {
+          label: 'Level two 1-1'
+        },
+      ],
+    },
+    {
+      label: 'Level one 2',
+      children: [
+        {
+          label: 'Level two 2-1',
+          children: [
+            {
+              label: 'Level three 2-1-1',
+            },
+          ],
+        },
+        {
+          label: 'Level two 2-2',
+          children: [
+            {
+              label: 'Level three 2-2-1',
+            },
+          ],
+        },
+      ],
+    }
+  ]
 </script>
 <style>
 
   .ja-card {
     width: 334px;
+    margin-bottom: 20px;
   }
   .ja-card__body {
     height: 140px;
@@ -75,4 +107,13 @@
     <span>开关 - Switch</span>
   </template>
   <ja-switch v-model="switchStatus" size="default"></ja-switch>
+</ja-card>
+
+
+<ja-card style="margin-right: 20px">
+  <template #header>
+    <span>树 - Tree</span>
+  </template>
+  <ja-tree :data="treeData">
+  </ja-tree>
 </ja-card>

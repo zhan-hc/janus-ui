@@ -1,10 +1,4 @@
 import {
-  del,
-  isVue2,
-  isVue3,
-  set
-} from "./chunk-CS73BQ2K.js";
-import {
   Fragment,
   TransitionGroup,
   computed,
@@ -39,10 +33,30 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-PCT7LBY2.js";
-import "./chunk-PZ5AY32C.js";
+} from "./chunk-FKSHRAQZ.js";
+import "./chunk-JVSYCCQQ.js";
 
-// node_modules/@vueuse/shared/index.mjs
+// ../node_modules/.pnpm/vue-demi@0.14.10_vue@3.5.13_typescript@5.8.3_/node_modules/vue-demi/lib/index.mjs
+var isVue2 = false;
+var isVue3 = true;
+function set(target, key, val) {
+  if (Array.isArray(target)) {
+    target.length = Math.max(target.length, key);
+    target.splice(key, 1, val);
+    return val;
+  }
+  target[key] = val;
+  return val;
+}
+function del(target, key) {
+  if (Array.isArray(target)) {
+    target.splice(key, 1);
+    return;
+  }
+  delete target[key];
+}
+
+// ../node_modules/.pnpm/@vueuse+shared@10.11.1_vue@3.5.13_typescript@5.8.3_/node_modules/@vueuse/shared/index.mjs
 function computedEager(fn, options) {
   var _a;
   const result = shallowRef();
@@ -1539,7 +1553,7 @@ function whenever(source, cb, options) {
   return stop;
 }
 
-// node_modules/@vueuse/core/index.mjs
+// ../node_modules/.pnpm/@vueuse+core@10.11.1_vue@3.5.13_typescript@5.8.3_/node_modules/@vueuse/core/index.mjs
 function computedAsync(evaluationCallback, initialState, optionsOrRef) {
   let options;
   if (isRef(optionsOrRef)) {

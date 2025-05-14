@@ -4,13 +4,65 @@ import ColorPanel from './components/color-panel.vue'
 import { useDark, useToggle } from '@vueuse/core' 
 import { Date, Arrow, Loading, Sun, Moon } from '@janus-c/icons-vue'
 import * as Icons from '@janus-c/icons-vue/dist/index'
-import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch } from '../../packages/janus-ui'
+import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch, JaTree } from '../../packages/components'
 const switchStatus = ref(false)
 const themeStatus = ref(false)
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 const themeChange = (val) => {
   toggleDark()
+}
+
+const data = [
+  {
+    label: 'Level one 1',
+    isLoading: true,
+    children: [
+      {
+        label: 'Level two 1-1',
+        children: [
+          {
+            label: 'Level three 1-1-1',
+          },
+          {
+            label: 'Level three 1-1-2',
+          }
+        ],
+      },
+    ],
+  },
+  {
+    label: 'Level one 2',
+    children: [
+      {
+        label: 'Level two 2-1',
+        children: [
+          {
+            label: 'Level three 2-1-1',
+          },
+        ],
+      },
+      {
+        label: 'Level two 2-2',
+        children: [
+          {
+            label: 'Level three 2-2-1',
+          },
+        ],
+      },
+    ],
+  },
+]
+
+const load = (node) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        [{
+          label: 'Level 我是接口加载获取的数据 1-1'
+        }])
+    }, 1000)
+  })
 }
 
 </script>
@@ -20,6 +72,7 @@ const themeChange = (val) => {
     <ja-anchor container=".container">
       <ja-anchor-link href="#section1" title="hover特效"></ja-anchor-link>
       <ja-anchor-link href="#section4" title="icon-图标"></ja-anchor-link>
+      <ja-anchor-link href="#section5" title="tree-树"></ja-anchor-link>
       <ja-anchor-link href="#section3" title="switch-开关"></ja-anchor-link>
       <ja-anchor-link href="#section2" title="主题色"></ja-anchor-link>
     </ja-anchor>
@@ -30,6 +83,18 @@ const themeChange = (val) => {
         <p class="hover-item ja-hover--border-around">边框环绕</p>
         <p class="hover-item ja-hover--contrast-progress">反差颜色进度</p>
         <p class="hover-item ja-hover--frame-content">展示菜单</p>
+      </div>
+      <div id="section5">
+        默认tree
+        <ja-tree :data="data" node-key="label">
+        </ja-tree>
+        自定义tree内容
+        <ja-tree :data="data" lazy :load="load" :icon="Moon">
+          <template #default="{ node }">
+            <span>{{ node.label }}</span>
+            <button>按钮</button>
+          </template>
+        </ja-tree>
       </div>
       <div id="section4">
         <ja-card>

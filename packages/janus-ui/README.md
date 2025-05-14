@@ -1,6 +1,8 @@
 ## JANUS UI
 
-一个轻量级UI框架
+一个轻量级UI框架，适用于搭建博客
+
+[使用文档](http://ui.janus-c.top/)
 
 ## Installation
 ```shell

@@ -16,7 +16,7 @@ defineOptions({
 })
 const props = defineProps({
   size: {
-    type: definePropType<number | string>([Number, String]),
+    type: definePropType<number | string>([Number, String])
   },
   color: {
     type: String,

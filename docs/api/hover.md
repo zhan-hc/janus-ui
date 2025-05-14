@@ -26,3 +26,6 @@
     border: 1px solid #000;
   }
 </style>
+<script setup>
+  import 'janus-ui/theme-chalk/hover.css'
+</script>

@@ -19,21 +19,34 @@ const moveFunc = (format, basePath) => {
 const moveFilePlugin = () => {
   return {
     name: 'moveFile',
-    async writeBundle (options) {
+    async writeBundle (options, bundle) {
       const distPath = path.resolve(__dirname, '../packages/janus-ui/es')
       const distLibPath = path.resolve(__dirname, '../packages/janus-ui/lib')
+      console.log(distPath, 'distPath', __dirname)
       options.format === 'es' ? moveFunc(options.format, distPath) : moveFunc(options.format, distLibPath)
+    },
+    generateBundle(options, bundle) {
+      const entries = Object.entries(bundle);
+      const prefix = 'packages/'
+      entries.forEach(([fileName, fileInfo]) => {
+        if (fileName.startsWith(prefix)) {
+          const newPath = fileName.slice(prefix.length);
+          console.log(newPath, 'newPath')
+          delete bundle[fileName];
+          fileInfo.fileName = newPath;
+          bundle[newPath] = fileInfo;
+        }
+      })
     }
   }
 }
-
 export default defineConfig({
   build: {
     //打包文件目录
     outDir: "../packages/janus-ui",
     rollupOptions: {
       //忽略打包vue文件
-      external: ["vue", '@vueuse/core', '@vue/shared'],
+      external: ["vue", '@vueuse/core', '@vue/shared', '@janus-c/icons-vue'],
       input: ["../packages/janus-ui/index.ts"],
       output: [
         {

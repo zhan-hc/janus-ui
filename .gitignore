@@ -21,3 +21,5 @@ packages/janus-ui/theme-chalk
 cypress/screenshots/*
 cypress/videos/*
 tmp
+docs/node_modules
+docs/.vitepress/*

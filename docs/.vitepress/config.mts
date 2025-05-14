@@ -52,6 +52,7 @@ export default defineConfig({
           items: [
             { text: 'Anchor 锚点', link: '/api/anchor' },
             { text: 'Switch 开关', link: '/api/switch' },
+            { text: 'Tree 树', link: '/api/tree' },
           ]
         }
       ]
