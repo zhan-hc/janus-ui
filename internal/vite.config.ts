@@ -31,7 +31,6 @@ const moveFilePlugin = () => {
       entries.forEach(([fileName, fileInfo]) => {
         if (fileName.startsWith(prefix)) {
           const newPath = fileName.slice(prefix.length);
-          console.log(newPath, 'newPath')
           delete bundle[fileName];
           fileInfo.fileName = newPath;
           bundle[newPath] = fileInfo;
@@ -47,7 +46,7 @@ export default defineConfig({
     rollupOptions: {
       //忽略打包vue文件
       external: ["vue", '@vueuse/core', '@vue/shared', '@janus-c/icons-vue'],
-      input: ["../packages/janus-ui/index.ts"],
+      input: ["../packages/janus-ui/index.ts", '../packages/utils/vite.ts'],
       output: [
         {
           //打包格式

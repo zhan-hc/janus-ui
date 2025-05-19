@@ -71,6 +71,9 @@ const shouldExpand = computed(() => {
 })
 
 const nodeClick = async (node: any) => {
+  if (node[getNodeAttrName('disabled')]) {
+    return
+  }
   if (!shouldExpand.value && node[getNodeAttrName('children')]?.length) {
     if (tree.props?.lazy && tree.props?.load) {
       try {

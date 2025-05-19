@@ -11,6 +11,7 @@
   .is-expanded > .#{$namespace}-tree-node__children {
     display: block;
   }
+  
 }
 
 @include b(tree-node){
@@ -30,6 +31,10 @@
     @include when(leaf) {
       opacity: 0;
     }
+  }
+  @include when(disabled) {
+    opacity: 0.3;
+    cursor: not-allowed;
   }
   .#{$namespace}-icon {
     margin-right: 6px;
