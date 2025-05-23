@@ -1,11 +1,12 @@
 {
   "name": "janus-ui",
-  "version": "0.0.6",
-  "description": "A Component Library for Vue 3",
+  "version": "0.1.5",
+  "description": "A Component Library for Vue 3, suitable for building blogs",
   "keywords": [
     "janus-ui",
     "ui",
-    "vue"
+    "vue3",
+    "blog"
   ],
   "main": "lib/index.js",
   "module": "es/index.mjs",

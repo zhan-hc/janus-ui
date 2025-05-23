@@ -1,0 +1,22 @@
+
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-orange: (
+  '1': #fff7e6,
+  '2': #ffe7ba,
+  '3': #ffd591,
+  '4': #ffc069,
+  '5': #ffa940,
+  '6': #fa8c16,
+  '7': #d46b08,
+  '8': #ad4e00,
+  '9': #873800,
+  '10': #612500
+);
+
+
+:root {
+  @include set-css-color-theme($color-orange);
+  @include set-css-color-type('primary');
+}

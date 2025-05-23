@@ -2,24 +2,24 @@
 @use 'sass:map';
 @use '../color/index.scss' as *;
 @use '../mixins/function.scss' as *;
-@use '../color/theme.scss' as *;
+// @use '../color/theme.scss' as *;
 
 /**
  * @desc 主题色
  * @types 主题色类别 red, valcano, orange, gold, yellow, lime, green, cyan, blue, geekblue, purple, magenta
  */
-$theme-color: 'valcano';
+// $theme-color: 'valcano';
 
 $color-scence: () !default;
 $color-scence: map.deep-merge(
   (
     'primary': (
-      '': getCssVar('color', $theme-color, '6'),
-      'normal': getCssVar('color', $theme-color, '6'),
-      'hover': getCssVar('color', $theme-color, '5'),
-      'click': getCssVar('color', $theme-color, '7'),
-      'selected': getCssVar('color', $theme-color, '1'),
-      'border': getCssVar('color', $theme-color, '5')
+      '': getCssVar('color', '6'),
+      'normal': getCssVar('color', '6'),
+      'hover': getCssVar('color', '5'),
+      'click': getCssVar('color', '7'),
+      'selected': getCssVar('color', '1'),
+      'border': getCssVar('color', '5')
     )
   ),
   $color-scence
@@ -44,6 +44,7 @@ $text-color: map.merge(
     'secondary': #909399,
     'placeholder': #a8abb2,
     'disabled': #c0c4cc,
+    'light-2': rgba(60, 60, 60, .7)
   ),
   $text-color
 );
@@ -138,3 +139,19 @@ $card: map.merge(
   ),
   $card
 );
+
+$nav: () !default;
+$nav: map.merge(
+  (
+    'height': 64px,
+    'text-color': #252933,
+    'border-color': getCssVar('border-color', 'light'),
+    'bg-color': getCssVar('bg-color'),
+    'bg-hover-color': rgba(142, 150, 170, .14)
+  ),
+  $nav
+);
+
+
+$layout-max-width: 1440px;
+$divider: #e2e2e3;

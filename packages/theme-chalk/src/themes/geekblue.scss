@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-geekblue: (
+  '1': #f0f5ff,
+  '2': #d6e4ff,
+  '3': #adc6ff,
+  '4': #85a5ff,
+  '5': #597ef7,
+  '6': #2f54eb,
+  '7': #1d39c4,
+  '8': #10239e,
+  '9': #061178,
+  '10': #030852
+);
+
+
+:root {
+  @include set-css-color-theme($color-geekblue);
+  @include set-css-color-type('primary');
+}

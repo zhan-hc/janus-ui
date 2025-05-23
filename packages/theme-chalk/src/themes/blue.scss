@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-blue: (
+  '1': #e6f7ff,
+  '2': #bae7ff,
+  '3': #91d5ff,
+  '4': #69c0ff,
+  '5': #40a9ff,
+  '6': #1890ff,
+  '7': #096dd9,
+  '8': #0050b3,
+  '9': #003a8c,
+  '10': #002766
+);
+
+
+:root {
+  @include set-css-color-theme($color-blue);
+  @include set-css-color-type('primary');
+}

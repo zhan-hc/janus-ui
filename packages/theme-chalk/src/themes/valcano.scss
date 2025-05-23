@@ -1,0 +1,22 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+
+$color-valcano: (
+  '1': #fff2e8,
+  '2': #ffd8bf,
+  '3': #ffbb96,
+  '4': #ff9c6e,
+  '5': #ff7a45,
+  '6': #fa541c,
+  '7': #d4380d,
+  '8': #ad2102,
+  '9': #871400,
+  '10': #610b00
+);
+
+
+:root {
+  @include set-css-color-theme($color-valcano);
+  @include set-css-color-type('primary');
+}

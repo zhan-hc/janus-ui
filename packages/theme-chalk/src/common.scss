@@ -1,0 +1,27 @@
+@use 'mixins/mixins' as *;
+@use 'common/var' as *;
+
+// 分割线
+@include b('divider__before') {
+  &::before {
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+    width: 1px;
+    height: 24px;
+    background-color: $divider;
+    content: "";
+  }
+}
+
+@include b('divider__after') {
+  &::after {
+    display: inline-block;
+    margin-right: 8px;
+    margin-left: 8px;
+    width: 1px;
+    height: 24px;
+    background-color: $divider;
+    content: "";
+  }
+}

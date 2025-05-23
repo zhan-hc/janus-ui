@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-purple: (
+  '1': #f9f0ff,
+  '2': #efdbff,
+  '3': #d3adf7,
+  '4': #b37feb,
+  '5': #9254de,
+  '6': #722ed1,
+  '7': #531dab,
+  '8': #391085,
+  '9': #22075e,
+  '10': #120338
+);
+
+
+:root {
+  @include set-css-color-theme($color-purple);
+  @include set-css-color-type('primary');
+}

@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-gold: (
+  '1': #fffbe6,
+  '2': #fff1b8,
+  '3': #ffe58f,
+  '4': #ffd666,
+  '5': #ffc53d,
+  '6': #faad14,
+  '7': #d48806,
+  '8': #ad6800,
+  '9': #874d00,
+  '10': #613400
+);
+
+
+:root {
+  @include set-css-color-theme($color-gold);
+  @include set-css-color-type('primary');
+}

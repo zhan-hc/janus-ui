@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-green: (
+  '1': #f6ffed,
+  '2': #d9f7be,
+  '3': #b7eb8f,
+  '4': #95de64,
+  '5': #73d13d,
+  '6': #52c41a,
+  '7': #389e0d,
+  '8': #237804,
+  '9': #135200,
+  '10': #092b00
+);
+
+
+:root {
+  @include set-css-color-theme($color-green);
+  @include set-css-color-type('primary');
+}

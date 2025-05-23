@@ -3,7 +3,7 @@
 
 
 html.dark {
-  @include set-css-theme-color($theme-color, 'dark');
+  // @include set-css-theme-color($theme-color, 'dark');
   @include set-css-color-type('primary');
   @include set-component-css-var('bg-color', $bg-color);
   @include set-component-css-var('border-color', $border-color);

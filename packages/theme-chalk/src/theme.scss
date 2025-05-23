@@ -1,9 +1,0 @@
-// CSS3 var
-@use 'common/var' as *;
-@use 'mixins/var' as *;
-@use 'mixins/mixins' as *;
-
-:root {
-  @include set-all-theme-color();
-}
-

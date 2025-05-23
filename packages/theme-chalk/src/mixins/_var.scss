@@ -1,9 +1,9 @@
 @use 'sass:map';
 @use 'config';
 @use 'function' as *;
-@use '../color/theme' as *;
+// @use '../color/theme' as *;
 @use '../common/var' as *;
-@use '../dark/theme.scss' as *;
+// @use '../dark/theme.scss' as *;
 // set css var value, because we need translate value to string
 // for example:
 // @include set-css-var-value(('color', 'primary'), red);
@@ -23,33 +23,39 @@
   }
 }
 
-// get all theme color
-@mixin set-all-theme-color($theme-type: 'light') {
-  @if $theme-type == 'dark' {
-    @each $attribute, $value in $theme-dark-colors {
-      @include set-css-theme-color($attribute)
-    }
-  } @else if $theme-type == 'light' {
-    @each $attribute, $value in $theme-colors {
-      @include set-css-theme-color($attribute)
-    }
+@mixin set-css-color-theme($color-list) {
+  @each $num, $value in $color-list {
+    #{getCssVarName('color', $num)}: $value;
   }
-  
 }
 
-// get theme color
-@mixin set-css-theme-color ($theme-color, $theme-type: 'light') {
-  @if $theme-type == 'dark' {
-    @each $attribute, $value in map.get($theme-dark-colors, $theme-color) {
-      #{getCssVarName('color', $attribute)}: $value;
-    }
-  } @else if $theme-type == 'light' {
-    @each $attribute, $value in map.get($theme-colors, $theme-color) {
-      #{getCssVarName('color', $attribute)}: $value;
-    }
-  }
+// get all theme color
+// @mixin set-all-theme-color($theme-type: 'light') {
+//   @if $theme-type == 'dark' {
+//     @each $attribute, $value in $theme-dark-colors {
+//       @include set-css-theme-color($attribute)
+//     }
+//   } @else if $theme-type == 'light' {
+//     @each $attribute, $value in $theme-colors {
+//       @include set-css-theme-color($attribute)
+//     }
+//   }
   
-}
+// }
+
+// get theme color
+// @mixin set-css-theme-color ($theme-color, $theme-type: 'light') {
+//   @if $theme-type == 'dark' {
+//     @each $attribute, $value in map.get($theme-dark-colors, $theme-color) {
+//       #{getCssVarName('color', $attribute)}: $value;
+//     }
+//   } @else if $theme-type == 'light' {
+//     @each $attribute, $value in map.get($theme-colors, $theme-color) {
+//       #{getCssVarName('color', $attribute)}: $value;
+//     }
+//   }
+  
+// }
 
 @mixin set-component-css-var($name, $variables) {
   @each $attribute, $value in $variables {

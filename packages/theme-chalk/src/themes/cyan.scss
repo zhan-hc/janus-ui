@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-cyan: (
+  '1': #e6fffb,
+  '2': #b5f5ec,
+  '3': #87e8de,
+  '4': #5cdbd3,
+  '5': #36cfc9,
+  '6': #13c2c2,
+  '7': #08979c,
+  '8': #006d75,
+  '9': #00474f,
+  '10': #002329
+);
+
+
+:root {
+  @include set-css-color-theme($color-cyan);
+  @include set-css-color-type('primary');
+}

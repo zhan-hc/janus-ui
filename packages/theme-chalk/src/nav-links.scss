@@ -1,0 +1,68 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+@include b(nav-links) {
+  @include set-component-css-var('nav', $nav);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  height: 100%;
+  @include e(link) {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: inherit;
+    color: getCssVar('nav-text-color');
+    &:hover {
+      font-weight: 500;
+      color: getCssVar('color-primary-hover');
+    }
+    @include when(active) {
+      color: getCssVar('color-primary');
+    }
+  }
+  @include e(group) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: inherit;
+    &:hover {
+      cursor: pointer;
+      @include e('item') {
+        opacity: 1;
+      }
+    }
+    @include e(icon) {
+      margin-left: 4px;
+      transform: rotate(90deg);
+    }
+    @include e('item') {
+      position: absolute;
+      top: calc(getCssVar('nav-height') / 2 + 20px);
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 128px;
+      max-height: calc(100vh - getCssVar('nav-height'));
+      padding: 12px;
+      transform: translateY(0);
+      opacity: 0;
+      background-color: getCssVar('nav-bg-color');
+      border: 1px solid getCssVar('nav-border-color');
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .#{$namespace}-links__item > .#{$namespace}-links__link {
+    line-height: 32px;
+    border-radius: 6px;
+    &:hover {
+      background-color: getCssVar('nav-bg-hover-color');
+    }
+  }
+}

@@ -1,14 +1,20 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import ColorPanel from './components/color-panel.vue'
+import blogIcon from './components/icon.vue'
 import { useDark, useToggle } from '@vueuse/core' 
-import { Date, Arrow, Loading, Sun, Moon } from '@janus-c/icons-vue'
+import { Date, Arrow, Loading, Sun, Moon, Github, Wechat, Juejin } from '@janus-c/icons-vue'
 import * as Icons from '@janus-c/icons-vue/dist/index'
-import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch, JaTree } from '../../packages/components'
+import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch, JaTree,JaNavBar, JaNavLinks } from '../../packages/components'
 const switchStatus = ref(false)
 const themeStatus = ref(false)
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const socialLinks = [
+      { icon: Github, link: 'https://github.com/zhan-hc/janus-ui' },
+      { icon: Juejin, link: 'https://github.com/zhan-hc/janus-ui' },
+      { icon: Wechat, link: '', event: () => {alert('微信号已复制')} }
+    ]
 const themeChange = (val) => {
   toggleDark()
 }
@@ -69,13 +75,29 @@ const load = (node) => {
 
 <template>
   <div class="wrap">
-    <ja-anchor container=".container">
-      <ja-anchor-link href="#section1" title="hover特效"></ja-anchor-link>
-      <ja-anchor-link href="#section4" title="icon-图标"></ja-anchor-link>
-      <ja-anchor-link href="#section5" title="tree-树"></ja-anchor-link>
-      <ja-anchor-link href="#section3" title="switch-开关"></ja-anchor-link>
-      <ja-anchor-link href="#section2" title="主题色"></ja-anchor-link>
-    </ja-anchor>
+    <ja-nav-bar title="Janus UI" icon="http://oss.janus-c.top/logo/logo.svg" :socialLinks="socialLinks" :scrollHide="false">
+      <template #right>
+        <ja-nav-links :data="[{
+          text: '首页',
+          link: '/'
+        },
+        {
+          text: '导航',
+          link: '/nav'
+        },
+        {
+          text: '项目',
+          link: '/project'
+        }]"></ja-nav-links>
+        <!-- <ja-anchor direction="horizontal">
+          <ja-anchor-link href="#section1" title="hover特效"></ja-anchor-link>
+          <ja-anchor-link href="#section4" title="icon-图标"></ja-anchor-link>
+          <ja-anchor-link href="#section5" title="tree-树"></ja-anchor-link>
+          <ja-anchor-link href="#section3" title="switch-开关"></ja-anchor-link>
+          <ja-anchor-link href="#section2" title="主题色"></ja-anchor-link>
+        </ja-anchor> -->
+      </template>
+    </ja-nav-bar>
     <div class="container">
       <div id="section1">
         <p>hover特效</p>
@@ -163,14 +185,17 @@ const load = (node) => {
 
 <style scoped>
 .wrap {
-  display: flex;
-  width: 80vw;
+  position: relative;
+  /* display: flex; */
+  /* padding: 0;
+  margin: 0; */
+  /* width: 80vw; */
   background: var(--ja-bg-color);
 }
 .container {
   flex: 1;
-  height: 80vh;
-  overflow-y: scroll;
+  /* height: 80vh;
+  overflow-y: scroll; */
 }
 .hover-item {
   display: inline-block;

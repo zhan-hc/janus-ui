@@ -1,0 +1,21 @@
+@use '../common/var' as *;
+@use '../mixins/var' as *;
+
+$color-magenta: (
+  '1': #fff0f6,
+  '2': #ffd6e7,
+  '3': #ffadd2,
+  '4': #ff85c0,
+  '5': #f759ab,
+  '6': #eb2f96,
+  '7': #c41d7f,
+  '8': #9e1068,
+  '9': #780650,
+  '10': #520339
+);
+
+
+:root {
+  @include set-css-color-theme($color-magenta);
+  @include set-css-color-type('primary');
+}
