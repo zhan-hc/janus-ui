@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@janus-c/icons-vue": "1.0.5",
     "@janus-ui/components": "workspace:^",
     "janus-ui": "^0.0.2",
     "vue": "^3.4.29"

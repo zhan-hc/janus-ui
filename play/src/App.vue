@@ -5,18 +5,30 @@ import blogIcon from './components/icon.vue'
 import { useDark, useToggle } from '@vueuse/core' 
 import { Date, Arrow, Loading, Sun, Moon, Github, Wechat, Juejin } from '@janus-c/icons-vue'
 import * as Icons from '@janus-c/icons-vue/dist/index'
-import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch, JaTree,JaNavBar, JaNavLinks } from '../../packages/components'
+// import message from '../../packages/components/message/src/message'
+import { JaAnchor, JaAnchorLink, JaCard, JaIcon, JaSwitch, JaTree,JaNavBar, JaNavLinks, JaMessage } from '../../packages/components'
 const switchStatus = ref(false)
 const themeStatus = ref(false)
+const tipStatus = ref(false)
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
+const tipRef = ref(null)
 const socialLinks = [
       { icon: Github, link: 'https://github.com/zhan-hc/janus-ui' },
       { icon: Juejin, link: 'https://github.com/zhan-hc/janus-ui' },
-      { icon: Wechat, link: '', event: () => {alert('微信号已复制')} }
+      { icon: Wechat, link: '', event: () => {
+        
+        tipRef.value = JaMessage({
+        msg: '扫码取最新动态',
+      })} }
     ]
 const themeChange = (val) => {
   toggleDark()
+}
+
+const showTip = () => {
+  console.log(tipRef.value)
+  tipRef.value.close()
 }
 
 const data = [
@@ -75,6 +87,9 @@ const load = (node) => {
 
 <template>
   <div class="wrap">
+    <!-- <ja-tip v-show="tipStatus" msg="撒谎精发撒颗粒剂"></ja-tip> -->
+    <br><br><br><br><br><br>
+    <div @click="showTip">showTip</div>
     <ja-nav-bar title="Janus UI" icon="http://oss.janus-c.top/logo/logo.svg" :socialLinks="socialLinks" :scrollHide="false">
       <template #right>
         <ja-nav-links :data="[{

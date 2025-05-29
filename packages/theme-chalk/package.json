@@ -23,5 +23,8 @@
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-sass": "^5.1.0"
+  },
+  "dependencies": {
+    "@janus-c/icons-vue": "1.0.4"
   }
 }

@@ -7,5 +7,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@janus-c/icons-vue": "1.0.4"
+  }
 }

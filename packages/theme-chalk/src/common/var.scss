@@ -133,7 +133,7 @@ $card: () !default;
 $card: map.merge(
   (
     'border-color': getCssVar('border-color', 'light'),
-    'border-radius': 4px,
+    'border-radius': getCssVar('border-radius', 'base'),
     'padding': 20px,
     'bg-color': #fff,
   ),
@@ -150,6 +150,17 @@ $nav: map.merge(
     'bg-hover-color': rgba(142, 150, 170, .14)
   ),
   $nav
+);
+
+$message: () !default;
+$message: map.merge(
+  (
+    'bg-color': getCssVar('bg-color', 'overlay'),
+    'color': getCssVar('color-primary'),
+    'border-radius': getCssVar('border-radius', 'base'),
+    'border-color': getCssVar('border-color', 'light'),
+  ),
+  $message
 );
 
 

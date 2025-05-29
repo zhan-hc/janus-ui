@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@janus-c/icons-vue": "^1.0.2",
+    "@janus-c/icons-vue": "^1.0.5",
     "@janus-ui/components": "workspace:^",
     "@janus-ui/constants": "workspace:^",
     "@janus-ui/hooks": "workspace:^",

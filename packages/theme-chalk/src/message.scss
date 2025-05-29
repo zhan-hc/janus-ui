@@ -1,0 +1,44 @@
+@use 'sass:map';
+
+@use 'mixins/mixins' as *;
+@use 'mixins/var' as *;
+@use 'common/var' as *;
+
+
+@include b(message) {
+  @include set-component-css-var('message', $message);
+  z-index: 2500;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  padding: 11px 15px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: getCssVar('message-color');
+  background-color: getCssVar('message-bg-color');
+  border-radius: getCssVar('message-border-radius');
+  border-width: 1px;
+  border-style: solid;
+  border-color: getCssVar('message-border-color');
+  @include e(text) {
+    margin-left: 8px;
+  }
+  @include e(close) {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+}
+.#{$namespace}-message-fade-enter-active,
+.#{$namespace}-message-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.#{$namespace}-message-fade-enter-from,
+.#{$namespace}-message-fade-leave-to {
+  opacity: 0;
+}

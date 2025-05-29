@@ -17,4 +17,5 @@
   @include set-component-css-var('switch', $switch);
   @include set-component-css-var('card', $card);
   @include set-component-css-var('nav', $nav);
+  @include set-component-css-var('message', $message);
 }
