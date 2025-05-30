@@ -15,8 +15,8 @@
     "vitepress": "^1.3.2"
   },
   "dependencies": {
-    "@janus-c/icons-vue": "1.0.4",
-    "janus-ui": "^0.0.5",
+    "@janus-c/icons-vue": "1.0.5",
+    "janus-ui": "^0.1.7",
     "vue": "^3.4.29"
   }
 }

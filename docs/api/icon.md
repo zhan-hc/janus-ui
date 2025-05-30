@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  import { JaIcon } from '@janus-ui/components'
+  import { JaIcon, JaMessage } from 'janus-ui'
   import * as Icons from '@janus-c/icons-vue/dist/index'
   import { useClipboard } from "@vueuse/core"
 
   const { copy, isSupported } = useClipboard();
   const handleCopy = (icon) => {
   if (!isSupported) {
-    window.$message.error("您的浏览器不支持Clipboard API");
+    window?.$message.error("您的浏览器不支持Clipboard API");
     return;
   }
 
   copy(`<ja-icon><${icon.name} /></ja-icon>`)
-  alert('复制成功')
+  JaMessage({msg: '复制成功'})
 }
 </script>
 

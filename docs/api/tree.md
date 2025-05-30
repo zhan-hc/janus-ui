@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { JaTree } from '@janus-ui/components'
+  import { JaTree } from 'janus-ui'
 
   const treeData = [
     {

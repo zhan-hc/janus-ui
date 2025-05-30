@@ -104,6 +104,9 @@ const load = (node) => {
           text: '项目',
           link: '/project'
         }]"></ja-nav-links>
+      </template>
+    </ja-nav-bar>
+    
         <!-- <ja-anchor direction="horizontal">
           <ja-anchor-link href="#section1" title="hover特效"></ja-anchor-link>
           <ja-anchor-link href="#section4" title="icon-图标"></ja-anchor-link>
@@ -111,8 +114,6 @@ const load = (node) => {
           <ja-anchor-link href="#section3" title="switch-开关"></ja-anchor-link>
           <ja-anchor-link href="#section2" title="主题色"></ja-anchor-link>
         </ja-anchor> -->
-      </template>
-    </ja-nav-bar>
     <div class="container">
       <div id="section1">
         <p>hover特效</p>

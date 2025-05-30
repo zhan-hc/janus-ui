@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { JaAnchor, JaAnchorLink } from '@janus-ui/components'
+  import { JaAnchor, JaAnchorLink } from 'janus-ui'
 </script>
 
 # Anchor - 锚点

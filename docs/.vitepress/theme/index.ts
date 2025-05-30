@@ -3,8 +3,11 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
-import '@janus-ui/theme-chalk/src/index.scss'
-import '@janus-ui/theme-chalk/src/dark/css-vars.scss'
+import 'janus-ui/theme-chalk/index.css'
+import 'janus-ui/theme-chalk/reset.css'
+import 'janus-ui/theme-chalk/hover.css'
+import 'janus-ui/theme-chalk/dark/css-vars.css'
+import JaunsUI from 'janus-ui'
 
 export default {
   extends: DefaultTheme,
@@ -14,6 +17,7 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
+    app.use(JaunsUI)
     // ...
   }
 } satisfies Theme

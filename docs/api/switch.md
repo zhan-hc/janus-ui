@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue'
-  import { JaSwitch } from '@janus-ui/components'
+  import { JaSwitch } from 'janus-ui'
   import { Sun, Moon } from '@janus-c/icons-vue'
 
   const switchStatus = ref(false)

@@ -52,11 +52,11 @@ importers:
   docs:
     dependencies:
       '@janus-c/icons-vue':
-        specifier: 1.0.4
-        version: 1.0.4
+        specifier: 1.0.5
+        version: 1.0.5
       janus-ui:
-        specifier: ^0.0.5
-        version: 0.0.5
+        specifier: ^0.1.7
+        version: 0.1.7
       vue:
         specifier: ^3.4.29
         version: 3.5.13(typescript@5.8.3)
@@ -1368,8 +1368,8 @@ packages:
   janus-ui@0.0.2:
     resolution: {integrity: sha512-MWm/LcPtmXm2QR5UporXrngLjFB63j8PNMvP97v8xCFuXbfR5vnTWjsr0KtPBM+bXNkI48YAjKRuWgn/z5rg+w==}
 
-  janus-ui@0.0.5:
-    resolution: {integrity: sha512-9giLykBLpdh4lut4MXesoJbuwgY1ne1PlvCGs3D5WqCZnnePwkXlsbKbZ53uhvovFPLm3jIfOXcY3Pf79neiIw==}
+  janus-ui@0.1.7:
+    resolution: {integrity: sha512-E67g3U3m4BcxwTNURyIy7DGHljaDfpzG+yz3vjbOByi5aAhvnJ+EbPszk75BLSbom0UlPiwRXIWJwXCm2r+JJQ==}
 
   jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
@@ -3216,7 +3216,9 @@ snapshots:
 
   janus-ui@0.0.2: {}
 
-  janus-ui@0.0.5: {}
+  janus-ui@0.1.7:
+    dependencies:
+      '@janus-c/icons-vue': 1.0.4
 
   jju@1.4.0: {}
 

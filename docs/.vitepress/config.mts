@@ -53,6 +53,9 @@ export default defineConfig({
             { text: 'Anchor 锚点', link: '/api/anchor' },
             { text: 'Switch 开关', link: '/api/switch' },
             { text: 'Tree 树', link: '/api/tree' },
+            { text: 'Message 消息', link: '/api/message' },
+            { text: 'Navbar 导航栏', link: '/api/navBar' },
+            { text: 'nav-link 导航链接', link: '/api/navLinks' },
           ]
         }
       ]
